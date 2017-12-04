@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">billsCalculatorApp</string>
+    <string name="welcome">Welcome</string>
+    <string name="needHelp">Need some help with those bills?</string>
+    <string name="billsTitle">Bills</string>
+    <string name="roomates">Roomates</string>
+    <string name="title">Title</string>
+    <string name="type">Type</string>
+    <string name="amount">Amount</string>
+    <string name="rent">Rent</string>
+    <string name="insurance">Insurance</string>
+    <string name="internet">Internet</string>
+    <string name="water">Water</string>
+    <string name="electricity">Electricity</string>
+    <string name="loans">Loans</string>
+    <string name="other">Other</string>
+    <string name="next">Next</string>
+    <string name="income">Monthly Income</string>
+</resources>
