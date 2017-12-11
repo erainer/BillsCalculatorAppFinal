@@ -80,9 +80,15 @@ public class Income extends AppCompatActivity {
                 displayScreen.putExtra("OtherRMPay", otherRMPay);
                 displayScreen.putExtra("Income", incomeAmount);
                 displayScreen.putExtra("afterBills", afterBills);
+                displayScreen.putExtra("myRent", myRent);
+                displayScreen.putExtra("myElectricity", myElectric);
+                displayScreen.putExtra("myWater", myWater);
+                displayScreen.putExtra("myInternet", myInternet);
+                displayScreen.putExtra("myInsurance", myInsurance);
 
                 //Start Activity
                 startActivity(displayScreen);
+                setContentView(R.layout.activity_display);
             }
         });
     }

@@ -57,7 +57,7 @@ public class Bills extends AppCompatActivity {
 
                 //Start Activity
                 startActivity(nextScreen);
-
+                setContentView(R.layout.activity_bills);
 
             }
         });

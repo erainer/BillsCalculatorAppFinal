@@ -10,6 +10,7 @@
         android:id="@+id/background"
         android:layout_width="602dp"
         android:layout_height="594dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background" />
@@ -19,12 +20,9 @@
         android:layout_width="85dp"
         android:layout_height="83dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.717"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/incomeAfterBG"
         app:srcCompat="@drawable/glasses" />
 
     <ImageView
@@ -78,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.692"
         app:layout_constraintStart_toEndOf="@+id/internetTxt"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/myAmtTitle" />
 
     <TextView
         android:id="@+id/sumbillTitle"
@@ -93,7 +91,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/myAmtTitle"
         android:layout_width="63dp"
         android:layout_height="50dp"
         android:layout_marginStart="96dp"
@@ -104,7 +102,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/rmAmtTitle"
         android:layout_width="83dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
@@ -113,7 +111,7 @@
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/myAmtTitle"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -129,7 +127,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sumbillTitle" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/rentAmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -149,10 +147,10 @@
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/rentAmt" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/electricAmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -172,10 +170,10 @@
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/electricAmt" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/waterAmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -195,10 +193,10 @@
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/waterAmt" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/internetAmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -218,10 +216,10 @@
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/internetAmt" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/insuranceAmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -241,10 +239,10 @@
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/insuranceAmt" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/otherAmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -286,26 +284,23 @@
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/otherAmt" />
 
     <TextView
         android:id="@+id/incomeAfterTxt"
         android:layout_width="89dp"
         android:layout_height="23dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/afterBills"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/pigGlassesImg"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/incomeTxt"
         app:layout_constraintTop_toTopOf="@+id/pigGlassesImg" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/incomeAmtBefore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -316,14 +311,14 @@
         app:layout_constraintTop_toBottomOf="@+id/incomeTxt" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/incomeAmtAfter"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_marginStart="20dp"
         android:text="TextView"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintStart_toEndOf="@+id/incomeAmtBefore"
         app:layout_constraintTop_toBottomOf="@+id/incomeAfterTxt" />
 
     <Button
