@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.activity_bills);
+                setContentView(R.layout.activity_display);
             }
         });
     }

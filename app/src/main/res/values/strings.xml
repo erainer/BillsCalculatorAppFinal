@@ -16,4 +16,19 @@
     <string name="other">Other</string>
     <string name="next">Next</string>
     <string name="income">Monthly Income</string>
+    <string name="submit">Submit</string>
+    <string name="results">Results</string>
+    <string name="sumAmt">Amount</string>
+    <string name="sumBill">Bills</string>
+    <string name="rmAmt">Roomates Amount</string>
+    <string name="incomeBefore">Income:</string>
+    <string name="afterBills">Left Over:</string>
+    <string name="startOver">Start Over</string>
+    <string name="rentTxt">Rent:</string>
+    <string name="insuranceTxt">Insurance:</string>
+    <string name="internetTxt">Internet:</string>
+    <string name="waterTxt">Water:</string>
+    <string name="electricityTxt">Electricity:</string>
+    <string name="loansTxt">Loans:</string>
+    <string name="otherTxt">Other:</string>
 </resources>

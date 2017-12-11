@@ -6,17 +6,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class Bills extends AppCompatActivity {
 
-    
-
+    private double rentSplit = 0;
+    private double electricSplit = 0;
+    private double waterSplit = 0;
+    private double internetSplit = 0;
+    private double insuranceSplit = 0;
+    private double otherSplit = 0;
+    boolean state = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bills);
+        final Button nextBtn = (Button) findViewById(R.id.button2);
         final EditText rent = (EditText) findViewById(R.id.rentBox);
         final EditText electricity = (EditText) findViewById(R.id.electricityBox);
         final EditText water = (EditText) findViewById(R.id.waterBox);
@@ -30,49 +37,42 @@ public class Bills extends AppCompatActivity {
         final EditText insuranceRM = (EditText) findViewById(R.id.insuranceRM);
         final EditText otherRM = (EditText) findViewById(R.id.otherRM);
         final CheckBox RM = (CheckBox) findViewById(R.id.checkBox);
-        Button nextBtn = (Button) findViewById(R.id.button2);
+
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.activity_main);
+                Intent nextScreen = new Intent(Bills.this, Income.class);
+                nextScreen.putExtra("Rent", rent.getText().toString());
+                nextScreen.putExtra("Electricity", electricity.getText().toString());
+                nextScreen.putExtra("Water", water.getText().toString());
+                nextScreen.putExtra("Internet", internet.getText().toString());
+                nextScreen.putExtra("Insurance", insurance.getText().toString());
+                nextScreen.putExtra("RentRM", rentSplit);
+                nextScreen.putExtra("ElectricRM", electricSplit);
+                nextScreen.putExtra("WaterRM", waterSplit);
+                nextScreen.putExtra("InternetRM", insuranceSplit);
+                nextScreen.putExtra("InsuranceRM", internetSplit);
+                nextScreen.putExtra("OtherRM", otherSplit);
+                nextScreen.putExtra("State", state);
+
+                //Start Activity
+                startActivity(nextScreen);
+
+
             }
         });
 
-
-
-//        next.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                setContentView(R.layout.activity_income);
-//                Intent nextScreen = new Intent(Bills.this, Display.class);
-//                nextScreen.putExtra("Rent", rent.getText().toString());
-//                nextScreen.putExtra("Electricity", electricity.getText().toString());
-//                nextScreen.putExtra("Water", water.getText().toString());
-//                nextScreen.putExtra("Internet", internet.getText().toString());
-//                nextScreen.putExtra("insurance", insurance.getText().toString());
-//                nextScreen.putExtra("Other", other.getText().toString());
-//
-//
-//                //Start Activity
-//                startActivity(nextScreen);
-//
-//
-//            }
-  //      });
-
-
-
-        RM.setOnClickListener(new View.OnClickListener() {
+        RM.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(RM.isChecked()){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (RM.isChecked()) {
                     rentRM.setVisibility(View.VISIBLE);
                     electricityRM.setVisibility(View.VISIBLE);
                     waterRM.setVisibility(View.VISIBLE);
                     internetRM.setVisibility(View.VISIBLE);
                     insuranceRM.setVisibility(View.VISIBLE);
                     otherRM.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     rentRM.setVisibility(View.GONE);
                     electricityRM.setVisibility(View.GONE);
                     waterRM.setVisibility(View.GONE);
@@ -80,61 +80,17 @@ public class Bills extends AppCompatActivity {
                     insuranceRM.setVisibility(View.GONE);
                     otherRM.setVisibility(View.GONE);
                 }
+
+                if(RM.isChecked()){
+                    rentSplit = Double.parseDouble(rentRM.getText().toString());
+                    electricSplit = Double.parseDouble(electricityRM.getText().toString());
+                    waterSplit = Double.parseDouble(waterRM.getText().toString());
+                    internetSplit = Double.parseDouble(internetRM.getText().toString());
+                    insuranceSplit = Double.parseDouble(insuranceRM.getText().toString());
+                    otherSplit = Double.parseDouble(otherRM.getText().toString());
+                    state = true;
+                }
             }
         });
-
-    }
-
-    public void splitBills(){
-        final EditText rentRM = (EditText) findViewById(R.id.rentRM);
-        final EditText electricityRM = (EditText) findViewById(R.id.electricityRM);
-        final EditText waterRM = (EditText) findViewById(R.id.waterRM);
-        final EditText internetRM = (EditText) findViewById(R.id.internetRM);
-        final EditText insuranceRM = (EditText) findViewById(R.id.insuranceRM);
-        final EditText otherRM = (EditText) findViewById(R.id.otherRM);
-
-        String temp = "";
-        int numRM = 0;
-        if(rentRM.getText().toString().isEmpty()){
-            numRM = 0;
-        }else{
-            temp = rentRM.getText().toString();
-            numRM = Integer.parseInt(temp);
-        }
-
-        if(electricityRM.getText().toString().isEmpty()){
-            numRM = 0;
-        }else{
-            temp = electricityRM.getText().toString();
-            numRM = Integer.parseInt(temp);
-        }
-
-        if(waterRM.getText().toString().isEmpty()){
-            numRM = 0;
-        }else{
-            temp = waterRM.getText().toString();
-            numRM = Integer.parseInt(temp);
-        }
-        if(internetRM.getText().toString().isEmpty()){
-            numRM = 0;
-        }else{
-            temp = internetRM.getText().toString();
-            numRM = Integer.parseInt(temp);
-        }
-        if(insuranceRM.getText().toString().isEmpty()){
-            numRM = 0;
-        }else{
-            temp = insuranceRM.getText().toString();
-            numRM = Integer.parseInt(temp);
-        }
-
-        if(otherRM.getText().toString().isEmpty()){
-            numRM = 0;
-        }else{
-            temp = otherRM.getText().toString();
-            numRM = Integer.parseInt(temp);
-        }
-
-
     }
 }
