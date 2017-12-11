@@ -23,7 +23,7 @@ public class Bills extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bills);
-        final Button nextBtn = (Button) findViewById(R.id.button2);
+        final Button nextBtn = (Button) findViewById(R.id.nextBtn);
         final EditText rent = (EditText) findViewById(R.id.rentBox);
         final EditText electricity = (EditText) findViewById(R.id.electricityBox);
         final EditText water = (EditText) findViewById(R.id.waterBox);
@@ -65,7 +65,7 @@ public class Bills extends AppCompatActivity {
         RM.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (RM.isChecked()) {
+                if (isChecked) {
                     rentRM.setVisibility(View.VISIBLE);
                     electricityRM.setVisibility(View.VISIBLE);
                     waterRM.setVisibility(View.VISIBLE);
@@ -81,15 +81,15 @@ public class Bills extends AppCompatActivity {
                     otherRM.setVisibility(View.GONE);
                 }
 
-                if(RM.isChecked()){
-                    rentSplit = Double.parseDouble(rentRM.getText().toString());
-                    electricSplit = Double.parseDouble(electricityRM.getText().toString());
-                    waterSplit = Double.parseDouble(waterRM.getText().toString());
-                    internetSplit = Double.parseDouble(internetRM.getText().toString());
-                    insuranceSplit = Double.parseDouble(insuranceRM.getText().toString());
-                    otherSplit = Double.parseDouble(otherRM.getText().toString());
-                    state = true;
-                }
+//                if(isChecked){
+//                    rentSplit = Double.parseDouble(rentRM.getText().toString());
+//                    electricSplit = Double.parseDouble(electricityRM.getText().toString());
+//                    waterSplit = Double.parseDouble(waterRM.getText().toString());
+//                    internetSplit = Double.parseDouble(internetRM.getText().toString());
+//                    insuranceSplit = Double.parseDouble(insuranceRM.getText().toString());
+//                    otherSplit = Double.parseDouble(otherRM.getText().toString());
+//                    state = true;
+//                }
             }
         });
     }
