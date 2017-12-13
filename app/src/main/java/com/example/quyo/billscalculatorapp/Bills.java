@@ -41,8 +41,8 @@ public class Bills extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextScreen = new Intent(Bills.this, Income.class);
-                nextScreen.putExtra("Rent", rent.getText().toString());
+                Intent nextScreen = new Intent(Bills.this, Display.class);
+                nextScreen.putExtra("Rent", rent.getText());
                 nextScreen.putExtra("Electricity", electricity.getText().toString());
                 nextScreen.putExtra("Water", water.getText().toString());
                 nextScreen.putExtra("Internet", internet.getText().toString());
@@ -80,16 +80,6 @@ public class Bills extends AppCompatActivity {
                     insuranceRM.setVisibility(View.GONE);
                     otherRM.setVisibility(View.GONE);
                 }
-
-//                if(isChecked){
-//                    rentSplit = Double.parseDouble(rentRM.getText().toString());
-//                    electricSplit = Double.parseDouble(electricityRM.getText().toString());
-//                    waterSplit = Double.parseDouble(waterRM.getText().toString());
-//                    internetSplit = Double.parseDouble(internetRM.getText().toString());
-//                    insuranceSplit = Double.parseDouble(insuranceRM.getText().toString());
-//                    otherSplit = Double.parseDouble(otherRM.getText().toString());
-//                    state = true;
-//                }
             }
         });
     }

@@ -94,9 +94,9 @@
 
     <TextView
         android:id="@+id/myAmtTitle"
-        android:layout_width="63dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="96dp"
+        android:layout_width="72dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="92dp"
         android:text="Your Amount"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
@@ -110,11 +110,13 @@
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:text="Roomates Amount"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toEndOf="@+id/myAmtTitle"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -123,11 +125,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
         android:text="@string/rentTxt"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="52dp" />
+        app:layout_constraintTop_toBottomOf="@+id/sumbillTitle" />
 
     <TextView
         android:id="@+id/rentAmt"
@@ -283,7 +286,7 @@
         android:layout_width="66dp"
         android:layout_height="24dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:text="@string/incomeBefore"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
@@ -318,10 +321,13 @@
         android:id="@+id/incomeAmtAfter"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="20dp"
         android:text="TextView"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/pigGlassesImg"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toEndOf="@+id/incomeAmtBefore"
         app:layout_constraintTop_toBottomOf="@+id/incomeAfterTxt" />
 

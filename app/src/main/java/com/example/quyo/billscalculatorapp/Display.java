@@ -76,12 +76,12 @@ public class Display extends AppCompatActivity {
         }
 
         StringBuilder displayBox = new StringBuilder(250);
-        display.append("$" + myRent + "\t" + "$" + rentRMPay + "\n\n" +
-                "$" + myElectric + "\t" + "$" + electricRMPay + "\n\n" +
-                "$" + myWater + "\t" + "$" + waterRMPay + "\n\n" +
-                "$" + myInternet + "\t" + "$" + internetRMPay + "\n\n" +
-                "$" + myInsurance + "\t" + "$" + insuranceRMPay + "\n\n" +
-                "$" + myOther + "\t" + "$" + otherRMPay);
+//        display.append("$" + myRent + "\t" + "$" + rentRMPay + "\n\n" +
+//                "$" + myElectric + "\t" + "$" + electricRMPay + "\n\n" +
+//                "$" + myWater + "\t" + "$" + waterRMPay + "\n\n" +
+//                "$" + myInternet + "\t" + "$" + internetRMPay + "\n\n" +
+//                "$" + myInsurance + "\t" + "$" + insuranceRMPay + "\n\n" +
+//                "$" + myOther + "\t" + "$" + otherRMPay);
         display.setText(displayBox);
         rentAmt.setText(Double.toString(rent));
         electricAmt.setText(Double.toString(electric));
